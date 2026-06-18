@@ -13,7 +13,9 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec)
 );
-app.use("/books", bookRoutes)
+
+app.use("/books", bookRoutes);
+console.log("Book Routes Loaded");
 
 // Registrasi routes 
 app.use('/api/auth', authRoutes);
@@ -31,9 +33,6 @@ app.use((err, req, res, next) => {
    console.error(err.stack);
    res.status(500).json({ message: "Terjadi kesalahan pada server." });
 });
-
-console.log("Book Routes Loaded");
-app.use("/books", bookRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server berjalan di port ${PORT}`));
