@@ -17,6 +17,18 @@ app.use(
 app.use("/books", bookRoutes);
 console.log("Book Routes Loaded");
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Backend API aktif",
+    endpoints: {
+      auth: "/api/auth",
+      books: "/books",
+      docs: "/api-docs",
+      health: "/health"
+    }
+  });
+});
+
 // Registrasi routes 
 app.use('/api/auth', authRoutes);
 
