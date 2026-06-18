@@ -1,10 +1,19 @@
 // app.js
 require('dotenv').config(); 
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./src/docs/swagger");
 const express = require('express'); 
 const authRoutes = require('./src/routes/authRoutes');
+const bookRoutes = require("./src/routes/bookRoutes");
 
 const app = express();
 app.use(express.json());
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec)
+);
+app.use("/books", bookRoutes)
 
 // Registrasi routes 
 app.use('/api/auth', authRoutes);
@@ -22,6 +31,9 @@ app.use((err, req, res, next) => {
    console.error(err.stack);
    res.status(500).json({ message: "Terjadi kesalahan pada server." });
 });
+
+console.log("Book Routes Loaded");
+app.use("/books", bookRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server berjalan di port ${PORT}`));
