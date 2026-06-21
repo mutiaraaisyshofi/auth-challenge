@@ -1,5 +1,7 @@
 // app.js
 require('dotenv').config(); 
+console.log("APP STARTED");
+console.log("DATABASE_URL =", process.env.DATABASE_URL);
 console.log("DATABASE_URL =", process.env.DATABASE_URL);
 
 const swaggerUi = require("swagger-ui-express");

@@ -12,7 +12,8 @@ const options = {
 
     servers: [
       {
-        url: process.env.BASE_URL || "http://localhost:3000"
+        url: "https://auth-challenge-production.up.railway.app/",
+        description: "Production Server",
       }
     ],
 
