@@ -23,8 +23,7 @@ exports.searchBook = async (req, res) => {
     const books = await prisma.book.findMany({
       where: {
         title: {
-          contains: title || "",
-          mode: "insensitive"
+          contains: title || ""
         }
       }
     });
