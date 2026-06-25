@@ -82,7 +82,7 @@ async function main() {
         stock: 20
       },
       {
-        title: "",
+        title: "Evolusi dan Seleksi: Alam Bicara",
         author: "Kyle Simpson",
         price: 125000,
         stock: 10

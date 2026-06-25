@@ -25,7 +25,7 @@ model User {
   @@map("users")
 }
 
-model book {
+model Book {
   id        Int      @id @default(autoincrement())
   title     String
   author    String

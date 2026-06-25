@@ -12,8 +12,7 @@ const options = {
 
     servers: [
       {
-        url: "https://auth-challenge-production.up.railway.app/",
-        description: "Production Server",
+        url: "https://auth-challenge-production.up.railway.app/"
       }
     ],
 
